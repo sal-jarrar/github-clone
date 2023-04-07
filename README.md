@@ -1,4 +1,4 @@
-![alt text](/img.png)
+![alt text](/src/images/img.png)
 
 # 1. Application Description and Technical Choices
 
