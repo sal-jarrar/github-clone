@@ -25,13 +25,22 @@ const App = () => {
 
   console.log(repositories);
 
+  // to trigger the fetchRepositories function whenever there is a change in the username, page, sort, or type state variables.
   useEffect(() => {
     if (username) {
       fetchRepositories();
     }
+    // to reset the state variables to their initial values whenever the component is unmounted.
     return () => reset();
   }, [page, sort, type]);
 
+  /* 
+    The component renders various UI elements based on the current fetch state.
+    If the fetch state is DEFAULT, a welcome message is displayed. 
+    If the fetch state is ERROR, an error alert is displayed with the appropriate error message. 
+    If the fetch state is LOADING, a loading spinner is displayed.
+    If the fetch state is SUCCESS, the Repositories component is rendered, passing in the fetched repositories data and various functions to manage the pagination, sorting, and filtering of the data.
+  */
   return (
     <div>
       <h2 className="my-4 text-center">GitHub Clone</h2>
